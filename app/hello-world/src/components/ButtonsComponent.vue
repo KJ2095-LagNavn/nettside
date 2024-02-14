@@ -1,13 +1,13 @@
 <template>
-    <div>
-        <button @click="setChoice">{{ text1 }}</button>
-    </div>
+  <div>
+    <button @click="setChoice">{{ text1 }}</button>
+  </div>
 </template>
 
 <script>
 export default {
-    name: "ButtonsComponent",
-    props: {
+  name: "ButtonsComponent",
+  props: {
     text1: String,
   },
   methods: {
