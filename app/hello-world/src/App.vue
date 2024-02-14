@@ -1,7 +1,7 @@
 <template>
   <nav class="nav">
     <router-link to="/">Kurs i Risikofylt lek</router-link> |
-    <router-link to="/about">Informasjon</router-link>
+    <router-link to="/info">Informasjon</router-link>
   </nav>
   <router-view />
 </template>
@@ -14,29 +14,20 @@
   text-align: center;
   color: #2c3e50;
 }
-
 .nav {
   top: 0px;
-  position: static;
-  height: 10%;
+  height: 2em;
   width: 100%;
   background-color: #2c3e50;
-  padding: inherit;
 }
 
-nav a {
+.nav a {
   font-weight: bold;
   color: #ececee;
-  padding-top: 120px;
-  bottom: 0px;
-}
-router-link {
-  padding-top: 120px;
-  bottom: 0px;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 nav a.router-link-exact-active {
   color: #42b983;
-  padding-top: 120px;
-  bottom: 0px;
 }
 </style>
