@@ -3,6 +3,7 @@
     <MultiChoiceComponent v-bind:buttonNames="['a', 'b', 'Maiken']" />
     <StartCourse />
     <ChildsInfo />
+    <SelectChildPropertiesView />
   </div>
 </template>
 
@@ -10,13 +11,14 @@
 import MultiChoiceComponent from "@/components/MultiChoiceComponent.vue";
 import StartCourse from "@/components/StartCourse.vue";
 import ChildsInfo from "@/components/ChildsInfo.vue";
+import SelectChildPropertiesView from "./SelectChildPropertiesView.vue";
 export default {
   name: "HomeView",
   components: {
     MultiChoiceComponent,
-    ButtonsComponent,
     StartCourse,
     ChildsInfo,
+    SelectChildPropertiesView,
   },
   props: {
     courseStarted: Boolean,
