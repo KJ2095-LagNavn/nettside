@@ -1,5 +1,5 @@
 <template>
   <div class="InformationView">
-    <h1>Insert image of lekestativ</h1>
+    <h1>Her kommer databasen</h1>
   </div>
 </template>
