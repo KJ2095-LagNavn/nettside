@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <HelloWorld msg="LÅLÅLÅLÅL" />
+    <ButtonsComponent text1="Write button text here" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import ButtonsComponent from "@/components/ButtonsComponent.vue";
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    ButtonsComponent,
   },
 };
 </script>
