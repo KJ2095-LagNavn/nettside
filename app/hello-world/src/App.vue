@@ -1,8 +1,8 @@
 <template>
-  <nav class="nav">
+  <!-- <nav class="nav">
     <router-link to="/">Kurs i Risikofylt lek</router-link> |
     <router-link to="/info">Informasjon</router-link>
-  </nav>
+  </nav> -->
   <router-view />
 </template>
 

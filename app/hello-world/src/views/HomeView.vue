@@ -1,17 +1,16 @@
 <template>
   <div class="home">
-    <ButtonsComponent text1="Write button text here" />
+    <MultiChoiceComponent v-bind:buttonNames="['a', 'b', 'Maiken']" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import ButtonsComponent from "@/components/ButtonsComponent.vue";
-
+import MultiChoiceComponent from "@/components/MultiChoiceComponent.vue";
 export default {
   name: "HomeView",
   components: {
-    ButtonsComponent,
+    MultiChoiceComponent,
   },
 };
 </script>
