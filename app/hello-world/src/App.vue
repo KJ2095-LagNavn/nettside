@@ -1,33 +1,23 @@
 <template>
-  <!-- <nav class="nav">
-    <router-link to="/">Kurs i Risikofylt lek</router-link> |
-    <router-link to="/info">Informasjon</router-link>
-  </nav> -->
   <router-view />
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
-.nav {
-  top: 0px;
-  height: 2em;
-  width: 100%;
+button {
   background-color: #2c3e50;
-}
-
-.nav a {
-  font-weight: bold;
-  color: #ececee;
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-nav a.router-link-exact-active {
-  color: #42b983;
+  margin: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  padding: 5px;
+  border-radius: 8px;
+  color: white;
 }
 </style>
