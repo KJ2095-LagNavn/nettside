@@ -36,6 +36,7 @@ export default {
     MultiChoiceComponent,
     StartCourse,
     ChildsInfo,
+    SelectChildPropertiesView,
   },
   methods: {
     //insert methods here

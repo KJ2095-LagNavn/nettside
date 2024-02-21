@@ -1,16 +1,20 @@
 <template>
-  <button @click="setChoice">{{ text1 }}</button>
+  <button :class="{ 'is-clicked': isClicked }" @click="handleClick">
+    {{ buttonName }}
+  </button>
 </template>
 
 <script>
 export default {
   name: "ButtonsComponent",
   props: {
-    text1: String,
+    buttonName: String,
+    isClicked: Boolean, // Indicates if the button has been clicked
   },
   methods: {
-    setChoice(event) {
-      console.log(event);
+    handleClick() {
+      this.$emit("clicked", this.buttonName); // Emit an event with the button text
+      console.log(this.buttonName);
     },
   },
 };
