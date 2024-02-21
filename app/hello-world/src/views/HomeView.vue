@@ -7,7 +7,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import MultiChoiceComponent from "@/components/MultiChoiceComponent.vue";
 import StartCourse from "@/components/StartCourse.vue";
 import ChildsInfo from "@/components/ChildsInfo.vue";
