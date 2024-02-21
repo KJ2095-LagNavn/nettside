@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <button @click="setChoice">{{ text1 }}</button>
-  </div>
+  <button @click="setChoice">{{ text1 }}</button>
 </template>
 
 <script>
