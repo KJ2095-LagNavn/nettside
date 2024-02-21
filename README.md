@@ -15,10 +15,9 @@ npm install -g @vue/cli
 vue --version
 ```
 
+3. You need git lfs to clone the project. You can download it from https://git-lfs.github.com/
 
-2. You need git lfs to clone the project. You can download it from https://git-lfs.github.com/
-
-3. Clone the project to your local machine.
+4. Clone the project to your local machine.
 ```bash
 git clone https://github.com/KJ2095-LagNavn/nettside.git
 ```
@@ -32,13 +31,18 @@ git clone https://github.com/KJ2095-LagNavn/nettside.git
 npm install
 ```
 
-3. Run the project
+4. Build the project
+```bash
+npm run build
+```
+
+5. Run the project
 ```bash
 cd app/hello-world
 npm run serve
 ```
 
-4. Open the project in your browser at http://localhost:8080/
+5. Open the project in your browser at http://localhost:8080/
 
 ## Other commands
 Command to fix eslint/prettier complie error: 
