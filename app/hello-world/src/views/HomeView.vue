@@ -1,12 +1,13 @@
 <template>
   <div class="home">
     <MultiChoiceComponent v-bind:buttonNames="['a', 'b', 'Maiken']" />
-    <StartCourse />
+<StartCourse />
     <ChildsInfo />
   </div>
 </template>
 
 <script>
+// @ is an alias to /src
 import MultiChoiceComponent from "@/components/MultiChoiceComponent.vue";
 import StartCourse from "@/components/StartCourse.vue";
 import ChildsInfo from "@/components/ChildsInfo.vue";
