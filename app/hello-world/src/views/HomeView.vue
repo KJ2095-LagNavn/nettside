@@ -30,8 +30,6 @@ export default {
         if (newValue == 1 && oldValue == 0) {
           this.isChildsInfoActive = !this.isChildsInfoActive;
           this.isStartActive = !this.isStartActive;
-          console.log("Setting childsinfo");
-          ChildsInfo.data.isActive = false;
         }
       }
     );
