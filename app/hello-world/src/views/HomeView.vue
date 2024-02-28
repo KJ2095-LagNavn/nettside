@@ -3,6 +3,12 @@
     <MultiChoiceComponent v-bind:buttonNames="['a', 'b', 'Maiken']" />
 <StartCourse />
     <ChildsInfo />
+    <VideoComponent
+      :src="require('@/assets/videos/testvideo.mp4')"
+      :autoplay="true"
+      :loop="true"
+      :muted="true"
+    />
   </div>
 </template>
 
@@ -11,6 +17,7 @@
 import MultiChoiceComponent from "@/components/MultiChoiceComponent.vue";
 import StartCourse from "@/components/StartCourse.vue";
 import ChildsInfo from "@/components/ChildsInfo.vue";
+import VideoComponent from "@/components/VideoComponent.vue";
 
 export default {
   name: "HomeView",
@@ -18,6 +25,7 @@ export default {
     MultiChoiceComponent,
     StartCourse,
     ChildsInfo,
+    VideoComponent,
   },
 };
 </script>
