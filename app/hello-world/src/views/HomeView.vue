@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <MultiChoiceComponent v-bind:buttonNames="['a', 'b', 'Maiken']" />
-<StartCourse />
+    <StartCourse />
     <ChildsInfo />
     <VideoComponent
       :src="require('@/assets/videos/testvideo.mp4')"
