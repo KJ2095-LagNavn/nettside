@@ -1,5 +1,5 @@
 <template>
-  <div class="startCourse" :class="{ active: isActive }">
+  <div class="startCourse">
     <h1>Kurs i Risikofylt Lek</h1>
     <button @click="startCourse">Start Kurset</button>
   </div>
@@ -8,15 +8,12 @@
 <script>
 export default {
   name: "StartCourseComponent",
-  data() {
-    return {
-      isActive: false,
-    };
-  },
   methods: {
     startCourse() {
       this.$store.dispatch("setStartCourse");
+      console.log(this.$store.getters.getCurrentState);
       this.$store.dispatch("incrementCurrentState");
+      console.log(this.$store.getters.getCurrentState);
       this.isActive = !this.isActive;
     },
   },
@@ -32,8 +29,5 @@ export default {
   width: 50%;
   height: 30%;
   position: relative;
-}
-.active {
-  display: none;
 }
 </style>

@@ -13,7 +13,11 @@ export default createStore({
     childsName: String,
     childsAge: 1,
   },
-  getters: {},
+  getters: {
+    getCurrentState(state) {
+      return state.currentState;
+    },
+  },
   mutations: {
     SET_START_COURSE(state) {
       state.startCourse = !state.startCourse;
@@ -43,4 +47,4 @@ export default createStore({
     },
   },
   modules: {},
-  });
+});
