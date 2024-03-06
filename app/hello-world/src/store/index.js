@@ -19,13 +19,18 @@ export default createStore({
     currentChapter: chapter.ChapterOne,
     childsName: String,
     childsAge: 1,
+    firstClimbing: String,
   },
   getters: {
     getCurrentState(state) {
       return state.currentState;
     },
     getChildsInfo(state) {
+      console.log("getting name: " + state.name);
       return state.childsName;
+    },
+    getFirstClimbing(state) {
+      return state.firstClimbing;
     },
   },
   mutations: {
@@ -41,6 +46,9 @@ export default createStore({
     SET_CHILDS_AGE(state, age) {
       state.childsAge = age;
     },
+    SET_FIRST_CLIMBING(state, upOrDown) {
+      state.firstClimbing = upOrDown;
+    },
   },
   actions: {
     setStartCourse({ commit }) {
@@ -54,6 +62,9 @@ export default createStore({
     },
     setChildsAge({ commit }, age) {
       commit("SET_CHILDS_AGE", age);
+    },
+    setFirstClimbing({ commit }, upOrDown) {
+      commit("SET_FIRST_CLIMBING", upOrDown);
     },
   },
   modules: {},
