@@ -20,15 +20,9 @@ export default {
     };
   },
   methods: {
-    setName() {
-      this.$store.dispatch("setChildsName", this.childsName);
-    },
-    setAge() {
-      this.$store.dispatch("setChildsAge", this.age);
-    },
     sumbit() {
-      this.setAge();
-      this.setName();
+      this.$store.dispatch("setChildsAge", this.age);
+      this.$store.dispatch("setChildsName", this.childsName);
       this.isActive = !this.isActive;
     },
   },

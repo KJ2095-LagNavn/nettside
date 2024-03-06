@@ -17,7 +17,6 @@ export default {
   name: "HomeView",
   data() {
     return {
-      started: false,
       isStartActive: false,
       isChildsInfoActive: true,
     };
@@ -40,17 +39,7 @@ export default {
     ChildsInfo,
   },
   methods: {
-    findChange() {
-      while (!this.data.started) {
-        if (this.$store.getters.getCurrentState == 1) {
-          this.data.started = true;
-        }
-      }
-    },
-    async checkForChange() {
-      await this.findChange();
-      console.log("complete");
-    },
+    //insert methods here
   },
 };
 </script>

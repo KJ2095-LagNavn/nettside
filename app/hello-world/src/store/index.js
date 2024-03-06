@@ -6,16 +6,26 @@ const myEnum = {
   SelectChildsWantedAbilities: 2,
 };
 
+const chapter = {
+  ChapterOne: 1,
+  ChapterTwo: 2,
+  ChapterThree: 3,
+};
+
 export default createStore({
   state: {
     startCourse: false,
     currentState: myEnum.Start,
+    currentChapter: chapter.ChapterOne,
     childsName: String,
     childsAge: 1,
   },
   getters: {
     getCurrentState(state) {
       return state.currentState;
+    },
+    getChildsInfo(state) {
+      return state.childsName;
     },
   },
   mutations: {
