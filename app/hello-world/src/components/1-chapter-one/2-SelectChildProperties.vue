@@ -1,18 +1,22 @@
 <template>
-  <h1>Hvilke egenskaper vil du barnet skal ha?</h1>
-  <MultiChoiceComponent
-    v-bind:buttonNames="wantedChildProperties"
-    v-bind:maxSelections="4"
-    class="childProperties"
-  />
-  <ButtonsComponent :buttonName="Neste" :isClicked="false" />
+  <div>
+    <h1>
+      Hvilke egenskaper vil du {{ this.$store.getters.getChildsName }} skal ha?
+    </h1>
+    <MultiChoiceComponent
+      v-bind:buttonNames="wantedChildProperties"
+      v-bind:maxSelections="4"
+      class="childProperties"
+    />
+    <ButtonsComponent :buttonName="'Neste'" :isClicked="false" />
+  </div>
 </template>
 
 <script>
 import ButtonsComponent from "@/components/ButtonsComponent.vue";
 import MultiChoiceComponent from "@/components/MultiChoiceComponent.vue";
 export default {
-  name: "HomeView",
+  name: "ChapterOneSelectChildProperties",
   data() {
     return {
       wantedChildProperties: [
