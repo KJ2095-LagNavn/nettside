@@ -1,14 +1,6 @@
 <template>
   <div class="home">
     <MultiChoiceComponent v-bind:buttonNames="['a', 'b', 'Maiken']" />
-    <StartCourse />
-    <ChildsInfo />
-    <VideoComponent
-      :src="require('@/assets/videos/testvideo.mp4')"
-      :autoplay="true"
-      :loop="true"
-      :muted="true"
-    />
     <StartCourse :class="{ active: isStartActive }" />
     <ChildsInfo :class="{ active: isChildsInfoActive }" />
   </div>
@@ -19,7 +11,6 @@
 import MultiChoiceComponent from "@/components/MultiChoiceComponent.vue";
 import StartCourse from "@/components/StartCourse.vue";
 import ChildsInfo from "@/components/ChildsInfo.vue";
-import VideoComponent from "@/components/VideoComponent.vue";
 import { mapState } from "vuex";
 
 export default {
@@ -46,7 +37,6 @@ export default {
     MultiChoiceComponent,
     StartCourse,
     ChildsInfo,
-    VideoComponent,
   },
   methods: {
     //insert methods here
