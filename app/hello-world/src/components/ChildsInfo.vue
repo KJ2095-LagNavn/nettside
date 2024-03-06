@@ -1,5 +1,5 @@
 <template>
-  <div class="childsinfo" :class="{ active: isActive }">
+  <div class="childsinfo">
     <h1>Hva heter barnet ditt?</h1>
     <input v-model="childsName" />
     <h1>Hvor gammel er barnet?</h1>
@@ -15,21 +15,14 @@ export default {
   name: "ChildsInfo",
   data() {
     return {
-      isActive: true,
       childsName: null,
       age: 1,
     };
   },
   methods: {
-    setName() {
-      this.$store.dispatch("setChildsName", this.childsName);
-    },
-    setAge() {
-      this.$store.dispatch("setChildsAge", this.age);
-    },
     sumbit() {
-      this.setAge();
-      this.setName();
+      this.$store.dispatch("setChildsAge", this.age);
+      this.$store.dispatch("setChildsName", this.childsName);
       this.isActive = !this.isActive;
     },
   },
@@ -44,8 +37,5 @@ export default {
   width: 50%;
   height: 30%;
   position: relative;
-}
-.active {
-  display: none;
 }
 </style>
