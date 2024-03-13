@@ -1,16 +1,16 @@
 // Define the objects
-const MyEnum = {
-  Start: 0,
-  FillInChildsInfo: 1,
-  SelectChildsWantedAbilities: 2,
+const Pages = {
+  Home: {
+    StartCourse: "Home-StartCourse",
+    ChildsInfo: "Home-ChildsInfo",
+  },
+  ChapterOne: {
+    Intro: "ChapterOne-Intro",
+    SelectChildsWantedAbilities: "ChapterOne-SelectChildsWantedAbilities",
+  },
+  ChapterTwo: {
+    Intro: "ChapterTwo-Intro",
+  },
 };
-
-const Chapter = {
-  Intro: "Intro",
-  One: "One",
-  Two: "Two",
-  Three: "Three",
-};
-
 // Export the objects
-module.exports = { MyEnum, Chapter };
+module.exports = { Pages };

@@ -8,6 +8,7 @@
 
 <script>
 import ButtonsComponent from "@/components/ButtonsComponent.vue";
+import { Pages } from "@/store/enums";
 
 export default {
   name: "ChapterOneIntro",
@@ -16,8 +17,11 @@ export default {
   },
   methods: {
     nextPage() {
-      this.$store.dispatch("setCurrentPage", 1);
-      console.log(this.$store.getters.getCurrentChapterAndPage);
+      this.$store.dispatch(
+        "setCurrentPage",
+        Pages.ChapterOne.SelectChildsWantedAbilities
+      );
+      console.log(this.$store.getters.getCurrentPage);
     },
   },
 };

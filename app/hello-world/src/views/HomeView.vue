@@ -1,33 +1,34 @@
 <template>
   <div class="home">
     <MultiChoiceComponent v-bind:buttonNames="['a', 'b', 'Maiken']" />
-    <StartCourse :class="{ not_active: activePage !== 0 }" />
-    <ChildsInfo :class="{ not_active: activePage !== 1 }" />
+    <StartCourse :class="{ hidden: activePage !== Pages.Home.StartCourse }" />
+    <ChildsInfo
+      :class="{ hidden: activePage !== this.Pages.Home.ChildsInfo }"
+    />
   </div>
 </template>
 
 <script>
 import MultiChoiceComponent from "@/components/MultiChoiceComponent.vue";
-import StartCourse from "@/components/0-intro/StartCourse.vue";
-import ChildsInfo from "@/components/0-intro/ChildsInfo.vue";
+import StartCourse from "@/components/0-intro/1-StartCourse.vue";
+import ChildsInfo from "@/components/0-intro/2-ChildsInfo.vue";
 import { mapState } from "vuex";
-import { Chapter } from "@/store/enums.js";
+import { Pages } from "@/store/enums.js";
 
 export default {
   name: "HomeView",
   data() {
     return {
-      activePage: 0,
+      Pages,
+      activePage: Pages.Home.StartCourse,
     };
   },
   computed: mapState(["currentState"]),
   created() {
     this.unwatch = this.$store.watch(
-      (state, getters) => getters.getChapterAndPage,
+      (state, getters) => getters.getCurrentPage,
       (newValue) => {
-        if (newValue.chapter === Chapter.Intro) {
-          this.activePage = newValue.page;
-        }
+        this.activePage = newValue;
       }
     );
   },
@@ -35,9 +36,6 @@ export default {
     MultiChoiceComponent,
     StartCourse,
     ChildsInfo,
-  },
-  methods: {
-    //insert methods here
   },
 };
 </script>
@@ -47,7 +45,7 @@ export default {
   display: block;
   align-content: center;
 }
-.not_active {
+.hidden {
   display: none;
 }
 </style>
