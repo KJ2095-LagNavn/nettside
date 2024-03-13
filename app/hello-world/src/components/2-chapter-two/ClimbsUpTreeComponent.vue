@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import VideoComponent from "./VideoComponent.vue";
+import VideoComponent from "../VideoComponent.vue";
 
 export default {
   components: {

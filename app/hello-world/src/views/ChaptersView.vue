@@ -12,6 +12,16 @@
   <ClimbTreeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbTree }"
   />
+  <ClimbsUpTreeComponent
+    :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbUpTree }"
+    videoSrc="../assets/videos/puppy.mp4"
+    title="Barnet klatrer opp"
+  />
+  <ClimbsUpTreeComponent
+    :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbDownTree }"
+    videoSrc="../assets/videos/testvideo.mp4"
+    title="Barnet klatrer ned"
+  />
   <MakeTreeHutComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.MakeTreeHut }"
   />
@@ -23,6 +33,7 @@ import ChapterOneSelectChildProperties from "@/components/1-chapter-one/2-Select
 import Chapter2IntroComponent from "@/components/2-chapter-two/Chapter2IntroComponent.vue";
 import ClimbTreeComponent from "@/components/2-chapter-two/ClimbTreeComponent.vue";
 import MakeTreeHutComponent from "@/components/2-chapter-two/MakeTreeHutComponent.vue";
+import ClimbsUpTreeComponent from "@/components/2-chapter-two/ClimbsUpTreeComponent.vue";
 import { Pages } from "@/store/enums.js";
 import { mapState } from "vuex";
 
@@ -33,6 +44,7 @@ export default {
     ChapterOneSelectChildProperties,
     Chapter2IntroComponent,
     ClimbTreeComponent,
+    ClimbsUpTreeComponent,
     MakeTreeHutComponent,
   },
   methods: {
