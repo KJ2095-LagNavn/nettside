@@ -1,35 +1,27 @@
 <template>
   <div class="videobox" id="firstVideo">
-    <h1>Video 1: Barnet klatrer opp i et høyt tre</h1>
+    <h1>Barnet vil bygge trehytte med farlig verktøy</h1>
     <VideoComponent src="../assets/videos/testvideo.mp4" />
     <p>Hva ville du ha gjort?</p>
     <button v-on:click="buttonClicked('child climbs down')">
-      Be barnet klatre ned
+      Vis barnet hvordan verktøyene brukes og la barnet gjøre jobben selv
     </button>
     <button v-on:click="buttonClicked('child climbs up')">
-      La barnet klatre videre
+      Vis barnet hvordan verktøyene brukes og gjør jobben selv
     </button>
   </div>
 </template>
 
 <script>
-import VideoComponent from "./VideoComponent.vue";
+import VideoComponent from "../VideoComponent.vue";
 
 export default {
   components: {
     VideoComponent,
   },
-  data() {
-    return {
-      title: String,
-      text: String,
-      videoSrc: String,
-    };
-  },
   methods: {
-    buttonClicked(upOrDown) {
-      this.$store.dispatch("setFirstClimbing", upOrDown);
-      this.$emit("changeComponent", upOrDown);
+    buttonClicked(text) {
+      console.log(text);
     },
   },
 };

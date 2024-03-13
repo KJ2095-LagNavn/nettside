@@ -33,7 +33,6 @@ export default {
   },
   data() {
     return {
-      maiken: "maik",
       childsName: String,
       isStartActive: true,
       component1: ClimbsUpTreeComponent,
