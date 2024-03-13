@@ -1,33 +1,32 @@
 <template>
   <div class="home">
     <MultiChoiceComponent v-bind:buttonNames="['a', 'b', 'Maiken']" />
-    <StartCourse :class="{ active: isStartActive }" />
-    <ChildsInfo :class="{ active: isChildsInfoActive }" />
+    <StartCourse :class="{ not_active: activePage !== 0 }" />
+    <ChildsInfo :class="{ not_active: activePage !== 1 }" />
   </div>
 </template>
 
 <script>
 import MultiChoiceComponent from "@/components/MultiChoiceComponent.vue";
-import StartCourse from "@/components/StartCourse.vue";
-import ChildsInfo from "@/components/ChildsInfo.vue";
+import StartCourse from "@/components/0-intro/StartCourse.vue";
+import ChildsInfo from "@/components/0-intro/ChildsInfo.vue";
 import { mapState } from "vuex";
+import { Chapter } from "@/store/enums.js";
 
 export default {
   name: "HomeView",
   data() {
     return {
-      isStartActive: false,
-      isChildsInfoActive: true,
+      activePage: 0,
     };
   },
   computed: mapState(["currentState"]),
   created() {
     this.unwatch = this.$store.watch(
-      (state, getters) => getters.getCurrentState,
-      (newValue, oldValue) => {
-        if (newValue == 1 && oldValue == 0) {
-          this.isChildsInfoActive = !this.isChildsInfoActive;
-          this.isStartActive = !this.isStartActive;
+      (state, getters) => getters.getChapterAndPage,
+      (newValue) => {
+        if (newValue.chapter === Chapter.Intro) {
+          this.activePage = newValue.page;
         }
       }
     );
@@ -48,7 +47,7 @@ export default {
   display: block;
   align-content: center;
 }
-.active {
+.not_active {
   display: none;
 }
 </style>

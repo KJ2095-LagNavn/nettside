@@ -1,25 +1,20 @@
 import { createStore } from "vuex";
-
-const myEnum = {
-  Start: 0,
-  FillInChildsInfo: 1,
-  SelectChildsWantedAbilities: 2,
-};
-
-const chapter = {
-  ChapterOne: 1,
-  ChapterTwo: 2,
-  ChapterThree: 3,
-};
+import { MyEnum, Chapter } from "@/store/enums.js";
 
 export default createStore({
   state: {
     startCourse: false,
-    currentState: myEnum.Start,
-    currentChapter: chapter.ChapterOne,
     childsName: String,
     childsAge: 1,
     firstClimbing: String,
+    currentState: MyEnum.Start,
+    currentChapter: Chapter.Intro,
+    currentPageNumber: 0,
+    childData: {
+      name: String,
+      age: 1,
+      selectedChildProperties: [],
+    },
   },
   getters: {
     getCurrentState(state) {
@@ -28,6 +23,12 @@ export default createStore({
     getChildsInfo(state) {
       console.log("getting name: " + state.name);
       return state.childsName;
+    },
+    getCurrentChapterAndPage(state) {
+      return { chapter: state.currentChapter, page: state.currentPageNumber };
+    },
+    getChildData(state) {
+      return state.childData;
     },
     getFirstClimbing(state) {
       return state.firstClimbing;
@@ -40,11 +41,17 @@ export default createStore({
     INCREMENT_CURRENT_STATE(state) {
       state.currentState += 1;
     },
+    SET_CURRENT_CHAPTER(state, chapter) {
+      state.currentChapter = chapter;
+    },
+    SET_CURRENT_PAGE(state, page) {
+      state.currentPageNumber = page;
+    },
     SET_CHILDS_NAME(state, name) {
-      state.childsName = name;
+      state.childData.name = name;
     },
     SET_CHILDS_AGE(state, age) {
-      state.childsAge = age;
+      state.childData.age = age;
     },
     SET_FIRST_CLIMBING(state, upOrDown) {
       state.firstClimbing = upOrDown;
@@ -56,6 +63,12 @@ export default createStore({
     },
     incrementCurrentState({ commit }) {
       commit("INCREMENT_CURRENT_STATE");
+    },
+    setCurrentChapter({ commit }, chapter) {
+      commit("SET_CURRENT_CHAPTER", chapter);
+    },
+    setCurrentPage({ commit }, page) {
+      commit("SET_CURRENT_PAGE", page);
     },
     setChildsName({ commit }, name) {
       commit("SET_CHILDS_NAME", name);

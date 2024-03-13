@@ -6,15 +6,15 @@
 </template>
 
 <script>
+import { Chapter } from "@/store/enums.js";
 export default {
   name: "StartCourseComponent",
   methods: {
     startCourse() {
       this.$store.dispatch("setStartCourse");
-      console.log(this.$store.getters.getCurrentState);
-      this.$store.dispatch("incrementCurrentState");
-      console.log(this.$store.getters.getCurrentState);
-      this.isActive = !this.isActive;
+      this.$store.dispatch("setCurrentChapter", Chapter.Intro);
+      this.$store.dispatch("setCurrentPage", 1);
+      console.log(this.$store.getters.getCurrentChapterAndPage);
     },
   },
 };
