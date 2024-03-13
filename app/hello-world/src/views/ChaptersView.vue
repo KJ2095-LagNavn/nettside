@@ -6,36 +6,40 @@
       hidden: activePage !== Pages.ChapterOne.SelectChildsWantedAbilities,
     }"
   />
+  <ChapterOneSelectWhatChildAllowed
+    :class="{
+      hidden: activePage !== Pages.ChapterOne.SelectWhatChildAllowed,
+    }"
+  />
+  <ChapterOneSelectWhatYouAllowed
+    :class="{
+      hidden: activePage !== Pages.ChapterOne.SelectWhatYouAllowed,
+    }"
+  />
 </template>
 
 <script>
 import ChapterOneIntro from "@/components/1-chapter-one/1-Intro.vue";
 import ChapterOneSelectChildProperties from "@/components/1-chapter-one/2-SelectChildProperties.vue";
+import ChapterOneSelectWhatChildAllowed from "@/components/1-chapter-one/3-SelectWhatChildAllowed.vue";
+import ChapterOneSelectWhatYouAllowed from "@/components/1-chapter-one/4-SelectWhatYouAllowed.vue";
 import { Pages } from "@/store/enums.js";
-import { mapState } from "vuex";
 
 export default {
-  name: "ChapterOneView",
+  name: "ChaptersView",
   components: {
     ChapterOneIntro,
     ChapterOneSelectChildProperties,
+    ChapterOneSelectWhatChildAllowed,
+    ChapterOneSelectWhatYouAllowed,
   },
-  methods: {
-    // startChapterOne() {
-    //   this.$store.dispatch(
-    //     "setCurrentPage",
-    //     Pages.ChapterOne.SelectChildsWantedAbilities
-    //   );
-    //   console.log(this.$store.getters.getCurrentPage);
-    // },
-  },
+  methods: {},
   data() {
     return {
       Pages,
       activePage: Pages.ChapterOne.Intro,
     };
   },
-  computed: mapState(["currentState"]),
   created() {
     this.$store.dispatch("setCurrentPage", Pages.ChapterOne.Intro);
 

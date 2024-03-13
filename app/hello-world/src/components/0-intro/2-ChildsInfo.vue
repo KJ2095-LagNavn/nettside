@@ -25,7 +25,7 @@ export default {
       this.$store.dispatch("setChildsAge", this.age);
       this.$store.dispatch("setChildsName", this.childsName);
       this.isActive = !this.isActive;
-      router.push({ path: "/chapter-one" });
+      router.push({ path: "/course" });
     },
   },
 };

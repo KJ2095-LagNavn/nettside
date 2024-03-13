@@ -1,22 +1,26 @@
 <template>
   <div>
-    <h1>
-      Hvilke egenskaper vil du {{ this.$store.getters.getChildsName }} skal ha?
-    </h1>
+    <h1>Hvilke egenskaper vil du {{ childData.name.toString() }} skal ha?</h1>
+    <p>(Velg maks 4)</p>
     <MultiChoiceComponent
       v-bind:buttonNames="wantedChildProperties"
       v-bind:maxSelections="4"
       class="childProperties"
     />
-    <ButtonsComponent :buttonName="'Neste'" :isClicked="false" />
+    <ButtonsComponent :buttonName="'Neste'" @clicked="nextPage" />
   </div>
 </template>
 
 <script>
 import ButtonsComponent from "@/components/ButtonsComponent.vue";
 import MultiChoiceComponent from "@/components/MultiChoiceComponent.vue";
+import { mapState } from "vuex";
+import { Pages } from "@/store/enums";
 export default {
   name: "ChapterOneSelectChildProperties",
+  computed: {
+    ...mapState(["childData"]),
+  },
   data() {
     return {
       wantedChildProperties: [
@@ -48,38 +52,14 @@ export default {
   props: {
     courseStarted: Boolean,
   },
+  methods: {
+    nextPage() {
+      this.$store.dispatch(
+        "setCurrentPage",
+        Pages.ChapterOne.SelectWhatChildAllowed
+      );
+      console.log(this.$store.getters.getCurrentPage);
+    },
+  },
 };
 </script>
-
-<style>
-.home {
-  display: block;
-  align-content: center;
-}
-.childProperties {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
-  margin: 10px;
-  padding: 60px;
-}
-.childProperties button {
-  background-color: #2c3e50;
-  margin: 2px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: larger;
-  padding: 10px 5px;
-  border-radius: 8px;
-  color: white;
-  width: 100%;
-}
-.childProperties button:hover {
-  background-color: #34495e;
-}
-.childProperties button.is-clicked {
-  background-color: #36a85f;
-}
-.childProperties button.is-clicked:hover {
-  background-color: #2ecc71;
-}
-</style>
