@@ -18,6 +18,9 @@ const Pages = {
     MakeTreeHut: "ChapterTwo-MakeTreeHut",
     ChildMadeTreeHut: "ChapterTwo-ChildMadeTreeHut",
     ParentMadeTreeHut: "ChapterTwo-ParentMadeTreeHut",
+    TentSleepover: "ChapterTwo-TentSleepover",
+    Sleepover: "ChapterTwo-Sleepsover",
+    NoSleepover: "ChapterTwo-NoSleepover",
   },
 };
 // Export the objects

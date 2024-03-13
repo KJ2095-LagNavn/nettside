@@ -12,6 +12,7 @@
 
 <script>
 import router from "@/router/index";
+
 export default {
   name: "ChildsInfo",
   data() {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Hvilke egenskaper vil du {{ childData.name.toString() }} skal ha?</h1>
+    <h1>Hvilke egenskaper vil du {{ childData.name }} skal ha?</h1>
     <p>(Velg maks 4)</p>
     <MultiChoiceComponent
       v-bind:buttonNames="wantedChildProperties"
