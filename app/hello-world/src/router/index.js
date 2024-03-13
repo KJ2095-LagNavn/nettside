@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-//import HomeView from "../views/HomeView.vue";
 import ChapterTwo from "../views/ChapterTwo.vue";
 import ChapterOneView from "../views/ChapterOneView.vue";
 

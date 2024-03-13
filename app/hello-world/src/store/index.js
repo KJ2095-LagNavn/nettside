@@ -1,5 +1,7 @@
 import { createStore } from "vuex";
-import { MyEnum, Chapter } from "@/store/enums.js";
+import { Pages } from "@/store/enums.js";
+import { MyEnum } from "@/store/enums.js";
+import { Chapter } from "@/store/enums.js";
 
 export default createStore({
   state: {
@@ -10,6 +12,7 @@ export default createStore({
     currentState: MyEnum.Start,
     currentChapter: Chapter.Intro,
     currentPageNumber: 0,
+    currentPage: Pages.ChapterOne.Intro,
     childData: {
       name: String,
       age: 1,
@@ -27,6 +30,9 @@ export default createStore({
     getCurrentChapterAndPage(state) {
       return { chapter: state.currentChapter, page: state.currentPageNumber };
     },
+    getCurrentPage(state) {
+      return state.currentPage;
+    },
     getChildData(state) {
       return state.childData;
     },
@@ -38,15 +44,6 @@ export default createStore({
     SET_START_COURSE(state) {
       state.startCourse = !state.startCourse;
     },
-    INCREMENT_CURRENT_STATE(state) {
-      state.currentState += 1;
-    },
-    SET_CURRENT_CHAPTER(state, chapter) {
-      state.currentChapter = chapter;
-    },
-    SET_CURRENT_PAGE(state, page) {
-      state.currentPageNumber = page;
-    },
     SET_CHILDS_NAME(state, name) {
       state.childData.name = name;
     },
@@ -55,6 +52,9 @@ export default createStore({
     },
     SET_FIRST_CLIMBING(state, upOrDown) {
       state.firstClimbing = upOrDown;
+    },
+    SET_CURRENT_PAGE(state, page) {
+      state.currentPage = page;
     },
   },
   actions: {
