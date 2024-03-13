@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="multiChoiceComponent">
     <div v-for="(buttonName, index) in buttonNames" :key="index">
       <ButtonsComponent
         :buttonName="buttonName"
@@ -52,3 +52,32 @@ export default {
   },
 };
 </script>
+
+<style>
+.multiChoiceComponent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  margin: 10px;
+  padding: 60px;
+}
+.multiChoiceComponent button {
+  background-color: #2c3e50;
+  margin: 2px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: larger;
+  padding: 10px 5px;
+  border-radius: 8px;
+  color: white;
+  width: 100%;
+}
+.multiChoiceComponent button:hover {
+  background-color: #34495e;
+}
+.multiChoiceComponent button.is-clicked {
+  background-color: #36a85f;
+}
+.multiChoiceComponent button.is-clicked:hover {
+  background-color: #2ecc71;
+}
+</style>

@@ -6,6 +6,16 @@
       hidden: activePage !== Pages.ChapterOne.SelectChildsWantedAbilities,
     }"
   />
+  <ChapterOneSelectWhatChildAllowed
+    :class="{
+      hidden: activePage !== Pages.ChapterOne.SelectWhatChildAllowed,
+    }"
+  />
+  <ChapterOneSelectWhatYouAllowed
+    :class="{
+      hidden: activePage !== Pages.ChapterOne.SelectWhatYouAllowed,
+    }"
+  />
   <Chapter2IntroComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.Intro }"
   />
@@ -34,11 +44,12 @@ import Chapter2IntroComponent from "@/components/2-chapter-two/Chapter2IntroComp
 import ClimbTreeComponent from "@/components/2-chapter-two/ClimbTreeComponent.vue";
 import MakeTreeHutComponent from "@/components/2-chapter-two/MakeTreeHutComponent.vue";
 import ClimbsUpTreeComponent from "@/components/2-chapter-two/ClimbsUpTreeComponent.vue";
+import ChapterOneSelectWhatChildAllowed from "@/components/1-chapter-one/3-SelectWhatChildAllowed.vue";
+import ChapterOneSelectWhatYouAllowed from "@/components/1-chapter-one/4-SelectWhatYouAllowed.vue";
 import { Pages } from "@/store/enums.js";
-import { mapState } from "vuex";
 
 export default {
-  name: "ChapterOneView",
+  name: "ChaptersView",
   components: {
     ChapterOneIntro,
     ChapterOneSelectChildProperties,
@@ -46,23 +57,16 @@ export default {
     ClimbTreeComponent,
     ClimbsUpTreeComponent,
     MakeTreeHutComponent,
+    ChapterOneSelectWhatChildAllowed,
+    ChapterOneSelectWhatYouAllowed,
   },
-  methods: {
-    // startChapterOne() {
-    //   this.$store.dispatch(
-    //     "setCurrentPage",
-    //     Pages.ChapterOne.SelectChildsWantedAbilities
-    //   );
-    //   console.log(this.$store.getters.getCurrentPage);
-    // },
-  },
+  methods: {},
   data() {
     return {
       Pages,
       activePage: Pages.ChapterOne.Intro,
     };
   },
-  computed: mapState(["currentState"]),
   created() {
     this.$store.dispatch("setCurrentPage", Pages.ChapterOne.Intro);
 

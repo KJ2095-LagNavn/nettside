@@ -10,7 +10,6 @@
 <script>
 import StartCourse from "@/components/0-intro/1-StartCourse.vue";
 import ChildsInfo from "@/components/0-intro/2-ChildsInfo.vue";
-import { mapState } from "vuex";
 import { Pages } from "@/store/enums.js";
 
 export default {
@@ -21,7 +20,6 @@ export default {
       activePage: Pages.Home.StartCourse,
     };
   },
-  computed: mapState(["currentState"]),
   created() {
     this.unwatch = this.$store.watch(
       (state, getters) => getters.getCurrentPage,
