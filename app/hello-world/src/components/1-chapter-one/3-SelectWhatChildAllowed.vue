@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1>Hva får {{ childData.name.toString() }} lov til å gjøre?</h1>
-    <p>(Velg maks 4)</p>
+    <h1>
+      Kryss av for de fire aktiviteter som {{ childData.name }} gjør mest i
+      løpet av en vanlig uke?
+    </h1>
     <MultiChoiceComponent
       v-bind:buttonNames="whatChildAllowed"
       v-bind:maxSelections="4"
@@ -24,17 +26,18 @@ export default {
   data() {
     return {
       whatChildAllowed: [
-        "Klatre høyt i trær",
-        "Gå alene til skolen",
-        "Være ute etter mørkets frembrudd",
-        "Være på sosiale medier",
-        "Spille dataspill",
+        "Lese bøker",
         "Se på TV",
-        "Være med venner hjem",
-        "Være med venner ute",
-        "Være med venner på overnatting",
-        "Være med venner på hyttetur",
-        "Være med venner på ferie",
+        "Spille TV-spill",
+        "Leke i nabolaget",
+        "Klatre i trær",
+        "Være på telefonen",
+        "Tegne og male",
+        "Leke innendørs",
+        "Ha venner på besøk",
+        "Være på besøk hos venner",
+        "Bygge trehytte e.l.",
+        "Sykle",
       ],
     };
   },

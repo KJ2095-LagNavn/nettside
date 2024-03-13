@@ -19,7 +19,7 @@ export default {
     buttonNames: Array,
     maxSelections: {
       type: Number,
-      default: 5, // Set a default value of 5
+      default: 4, // Set a default value of 5
     },
   },
 
@@ -56,7 +56,7 @@ export default {
 <style>
 .multiChoiceComponent {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   margin: 10px;
   padding: 60px;

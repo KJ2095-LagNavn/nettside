@@ -10,14 +10,16 @@
       v-bind:maxSelections="4"
       class="multiChoiceComponent"
     />
-    <ButtonsComponent :buttonName="'Neste'" :isClicked="false" />
+    <ButtonsComponent :buttonName="'Neste'" @clicked="nextPage" />
   </div>
 </template>
 
 <script>
 import ButtonsComponent from "@/components/ButtonsComponent.vue";
 import MultiChoiceComponent from "@/components/MultiChoiceComponent.vue";
+import { Pages } from "@/store/enums";
 import { mapState } from "vuex";
+
 export default {
   name: "ChapterOneSelectWhatYouAllowed",
   computed: {
@@ -26,24 +28,32 @@ export default {
   data() {
     return {
       whatChildAllowed: [
-        "Klatre høyt i trær",
-        "Gå alene til skolen",
-        "Være ute etter mørkets frembrudd",
-        "Være på sosiale medier",
-        "Spille dataspill",
+        "Lese bøker",
         "Se på TV",
-        "Være med venner hjem",
-        "Være med venner ute",
-        "Være med venner på overnatting",
-        "Være med venner på hyttetur",
-        "Være med venner på ferie",
+        "Spille TV-spill",
+        "Leke i nabolaget",
+        "Klatre i trær",
+        "Være på telefonen",
+        "Tegne og male",
+        "Leke innendørs",
+        "Ha venner på besøk",
+        "Være på besøk hos venner",
+        "Bygge trehytte e.l.",
+        "Sykle",
       ],
-      childsAge: this.$store.getters.getChildsAge,
     };
   },
   components: {
     MultiChoiceComponent,
     ButtonsComponent,
+  },
+  methods: {
+    nextPage() {
+      this.$store.dispatch(
+        "setCurrentPage",
+        Pages.ChapterOne.ChildhoodMemories
+      );
+    },
   },
 };
 </script>

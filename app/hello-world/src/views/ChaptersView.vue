@@ -16,6 +16,11 @@
       hidden: activePage !== Pages.ChapterOne.SelectWhatYouAllowed,
     }"
   />
+  <ChapterOneChildhoodMemories
+    :class="{
+      hidden: activePage !== Pages.ChapterOne.ChildhoodMemories,
+    }"
+  />
 </template>
 
 <script>
@@ -23,6 +28,7 @@ import ChapterOneIntro from "@/components/1-chapter-one/1-Intro.vue";
 import ChapterOneSelectChildProperties from "@/components/1-chapter-one/2-SelectChildProperties.vue";
 import ChapterOneSelectWhatChildAllowed from "@/components/1-chapter-one/3-SelectWhatChildAllowed.vue";
 import ChapterOneSelectWhatYouAllowed from "@/components/1-chapter-one/4-SelectWhatYouAllowed.vue";
+import ChapterOneChildhoodMemories from "@/components/1-chapter-one/5-ChildhoodMemories.vue";
 import { Pages } from "@/store/enums.js";
 
 export default {
@@ -32,6 +38,7 @@ export default {
     ChapterOneSelectChildProperties,
     ChapterOneSelectWhatChildAllowed,
     ChapterOneSelectWhatYouAllowed,
+    ChapterOneChildhoodMemories,
   },
   methods: {},
   data() {

@@ -9,6 +9,7 @@ const Pages = {
     SelectChildsWantedAbilities: "ChapterOne-SelectChildsWantedAbilities",
     SelectWhatChildAllowed: "ChapterOne-SelectWhatChildAllowed",
     SelectWhatYouAllowed: "ChapterOne-SelectWhatYouAllowed",
+    ChildhoodMemories: "ChapterOne-ChildhoodMemories",
   },
   ChapterTwo: {
     Intro: "ChapterTwo-Intro",
