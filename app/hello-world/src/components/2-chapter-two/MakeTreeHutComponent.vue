@@ -30,7 +30,6 @@ export default {
 <style>
 .videobox {
   padding: 3em;
-  display: inline-block;
   margin: 3em;
   background-color: #ececec;
   border-radius: 25px;

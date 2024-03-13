@@ -1,7 +1,5 @@
 import { createStore } from "vuex";
 import { Pages } from "@/store/enums.js";
-import { MyEnum } from "@/store/enums.js";
-import { Chapter } from "@/store/enums.js";
 
 export default createStore({
   state: {
@@ -9,8 +7,6 @@ export default createStore({
     childsName: String,
     childsAge: 1,
     firstClimbing: String,
-    currentState: MyEnum.Start,
-    currentChapter: Chapter.Intro,
     currentPageNumber: 0,
     currentPage: Pages.ChapterOne.Intro,
     childData: {

@@ -1,27 +1,22 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import ChapterTwo from "../views/ChapterTwo.vue";
-import ChapterOneView from "../views/ChapterOneView.vue";
+import HomeView from "@/views/HomeView.vue";
+import ChaptersView from "@/views/ChaptersView.vue";
 
 const routes = [
   {
     path: "/",
     name: "home",
-    component: ChapterTwo,
+    component: HomeView,
   },
   {
     path: "/chapter-one",
     name: "ChapterOneView",
-    component: ChapterOneView,
+    component: ChaptersView,
   },
   {
     path: "/database",
     name: "DataBaseView",
     component: () => import("../views/DataBaseView.vue"),
-  },
-  {
-    path: "/kapittelto",
-    name: "KapittelTo",
-    component: ChapterTwo,
   },
 ];
 

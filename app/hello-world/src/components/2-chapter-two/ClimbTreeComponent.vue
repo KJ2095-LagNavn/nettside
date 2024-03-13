@@ -1,5 +1,5 @@
 <template>
-  <div class="videobox" id="firstVideo">
+  <div id="videobox">
     <h1>Barnet klatrer opp i et høyt tre</h1>
     <VideoComponent src="../assets/videos/testvideo.mp4" />
     <p>Hva ville du ha gjort?</p>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import VideoComponent from "./VideoComponent.vue";
+import VideoComponent from "../VideoComponent.vue";
 
 export default {
   components: {
@@ -36,9 +36,8 @@ export default {
 </script>
 
 <style>
-.videobox {
+#videobox {
   padding: 3em;
-  display: inline-block;
   margin: 3em;
   background-color: #ececec;
   border-radius: 25px;

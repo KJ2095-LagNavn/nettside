@@ -1,5 +1,5 @@
 <template>
-  <div class="videobox">
+  <div id="videobox">
     <h1>{{ this.title }}</h1>
     <VideoComponent :src="this.videoSrc" />
     <button v-on:click="buttonClicked()">Se andre utfall</button>
@@ -29,9 +29,8 @@ export default {
 </script>
 
 <style>
-.videobox {
+#videobox {
   padding: 3em;
-  display: inline-block;
   margin: 3em;
   background-color: #ececec;
   border-radius: 25px;
