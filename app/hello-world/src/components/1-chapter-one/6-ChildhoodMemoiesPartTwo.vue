@@ -1,7 +1,10 @@
 <template>
   <div>
     <h1>Din barndom</h1>
-    <p>Hvilke aktiviteter husker du best fra din barndom?</p>
+    <p>
+      Skriv ned to positive og to negative inntrykk du sitter igjen med når du
+      tenker tilbake på denne/disse aktivitetene
+    </p>
     <textarea
       placeholder="Skriv her..."
       class="tekstboks"
@@ -18,7 +21,7 @@ import { mapState } from "vuex";
 import { Pages } from "@/store/enums";
 
 export default {
-  name: "ChapterOneChildhoodMemories",
+  name: "ChapterOneChildhoodMemoriesPartTwo",
   computed: {
     ...mapState(["childData"]),
   },
@@ -32,13 +35,10 @@ export default {
   },
   methods: {
     nextPage() {
-      this.$store.dispatch(
-        "setCurrentPage",
-        Pages.ChapterOne.ChildhoodMemoriesPartTwo
-      );
+      this.$store.dispatch("setCurrentPage", Pages.ChapterOne.Summary);
     },
     saveChildhoodMemory() {
-      this.$store.dispatch("setChildhoodMemories", this.childhoodMemory);
+      this.$store.dispatch("setChildhoodMemories2", this.childhoodMemory);
       console.log(this.$store.state.partOne.childhoodMemory);
     },
   },

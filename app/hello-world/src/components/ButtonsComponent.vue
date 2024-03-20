@@ -14,7 +14,7 @@ export default {
   methods: {
     handleClick() {
       this.$emit("clicked", this.buttonName); // Emit an event with the button text
-      console.log(this.buttonName);
+      // console.log(this.buttonName);
     },
   },
 };

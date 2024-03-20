@@ -42,6 +42,7 @@ export default {
         console.warn(`Maximum of ${this.maxSelections} selections allowed.`);
         // Implement user feedback mechanism here (e.g., toast notification)
       }
+      this.$emit("changedSelection", this.clickedButtons);
     },
     isButtonClicked(buttonName) {
       return this.clickedButtons.includes(buttonName);

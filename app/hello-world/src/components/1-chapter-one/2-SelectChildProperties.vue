@@ -6,6 +6,7 @@
       v-bind:buttonNames="wantedChildProperties"
       v-bind:maxSelections="4"
       class="childProperties"
+      @changedSelection="saveSelectedProperties"
     />
     <ButtonsComponent :buttonName="'Neste'" @clicked="nextPage" />
   </div>
@@ -47,12 +48,15 @@ export default {
     courseStarted: Boolean,
   },
   methods: {
+    saveSelectedProperties(selectedProperties) {
+      this.$store.dispatch("setSelectedChildAbilities", selectedProperties);
+      console.log(this.$store.state.partOne.selectedChildAbilities);
+    },
     nextPage() {
       this.$store.dispatch(
         "setCurrentPage",
         Pages.ChapterOne.SelectWhatChildAllowed
       );
-      console.log(this.$store.getters.getCurrentPage);
     },
   },
 };

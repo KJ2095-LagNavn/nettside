@@ -1,13 +1,14 @@
 <template>
   <div>
     <h1>
-      Kryss av for de fire aktiviteter som {{ childData.name }} gjør mest i
-      løpet av en vanlig uke?
+      Velg fire aktiviteter som {{ childData.name }} gjør mest i løpet av en
+      vanlig uke
     </h1>
     <MultiChoiceComponent
       v-bind:buttonNames="whatChildAllowed"
       v-bind:maxSelections="4"
       class="multiChoiceComponent"
+      @changedSelection="saveSelectedActivities"
     />
     <ButtonsComponent :buttonName="'Neste'" @clicked="nextPage" />
   </div>
@@ -51,6 +52,10 @@ export default {
         "setCurrentPage",
         Pages.ChapterOne.SelectWhatYouAllowed
       );
+    },
+    saveSelectedActivities(selectedActivities) {
+      this.$store.dispatch("setSelectedChildActivities", selectedActivities);
+      console.log(this.$store.state.partOne.selectedChildActivities);
     },
   },
 };

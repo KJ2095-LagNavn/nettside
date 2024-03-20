@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>
-      Hva fikk <bold>du</bold> lov til å gjøre når du var
+      Hvilke aktiviteter fikk <b>du</b> lov til å gjøre når du var
       {{ childData.age }} år?
     </h1>
     <p>(Velg maks 4)</p>
@@ -9,6 +9,7 @@
       v-bind:buttonNames="whatChildAllowed"
       v-bind:maxSelections="4"
       class="multiChoiceComponent"
+      @changedSelection="saveSelectedActivities"
     />
     <ButtonsComponent :buttonName="'Neste'" @clicked="nextPage" />
   </div>
@@ -53,6 +54,10 @@ export default {
         "setCurrentPage",
         Pages.ChapterOne.ChildhoodMemories
       );
+    },
+    saveSelectedActivities(selectedActivities) {
+      this.$store.dispatch("setSelectedChildActivities", selectedActivities);
+      console.log(this.$store.state.partOne.selectedChildActivities);
     },
   },
 };
