@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { Pages } from "@/store/enums";
+
 export default {
   data() {
     return {
@@ -21,7 +23,7 @@ export default {
   },
   methods: {
     startChapter() {
-      console.log("Start chap");
+      this.$store.dispatch("setCurrentPage", Pages.ChapterTwo.ClimbTree);
     },
   },
   created() {

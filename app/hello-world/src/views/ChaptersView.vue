@@ -22,40 +22,40 @@
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbTree }"
   />
   <ChoiceMadeComponent
-    :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbUpTree }"
-    videoSrc="../assets/videos/puppy.mp4"
-    title="Barnet klatrer opp"
+    :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbedUpTree }"
+    :videoSrc="'../assets/videos/testvideo.mp4'"
+    :componentTitle="'Barnet klatrer opp'"
   />
   <ChoiceMadeComponent
-    :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbDownTree }"
-    videoSrc="../assets/videos/testvideo.mp4"
-    title="Barnet klatrer ned"
+    :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbedDownTree }"
+    :videoSrc="'../assets/videos/testvideo.mp4'"
+    :componentTitle="'Barnet klatrer ned'"
   />
   <MakeTreeHutComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.MakeTreeHut }"
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.ChildMadeTreeHut }"
-    videoSrc="../assets/videos/puppy.mp4"
-    title="Barnet gjør jobben selv"
+    :videoSrc="'../assets/videos/puppy.mp4'"
+    :componentTitle="'Barnet gjør jobben selv'"
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.ParentMadeTreeHut }"
-    videoSrc="../assets/videos/testvideo.mp4"
-    title="Du gjør jobben selv"
+    :videoSrc="'../assets/videos/testvideo.mp4'"
+    :componentTitle="'Du gjør jobben selv'"
   />
   <ChapterTwoTent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.TentSleepover }"
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.Sleepover }"
-    videoSrc="../assets/videos/testvideo.mp4"
-    title="Du sier ja"
+    :videoSrc="'../assets/videos/testvideo.mp4'"
+    :componentTitle="'Du sier ja'"
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.NoSleepover }"
-    videoSrc="../assets/videos/puppy.mp4"
-    title="Du sier nei"
+    :videoSrc="'../assets/videos/puppy.mp4'"
+    :componentTitle="'Du sier nei'"
   />
 </template>
 
@@ -88,7 +88,7 @@ export default {
   data() {
     return {
       Pages,
-      activePage: Pages.ChapterOne.Intro,
+      activePage: Pages.ChapterTwo.Intro,
     };
   },
   created() {
@@ -97,7 +97,10 @@ export default {
     this.unwatch = this.$store.watch(
       (state, getters) => getters.getCurrentPage,
       (newValue) => {
+        console.log("recieved: " + newValue);
         this.activePage = newValue;
+        console.log(this.activePage);
+        console.log(this.Pages.ChapterTwo.ClimbedDownTree);
       }
     );
   },

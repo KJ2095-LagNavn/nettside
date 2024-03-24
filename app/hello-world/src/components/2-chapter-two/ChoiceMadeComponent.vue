@@ -1,24 +1,26 @@
 <template>
   <div id="videobox">
-    <h1>{{ this.title }}</h1>
-    <VideoComponent :src="this.videoSrc" />
-    <button v-on:click="buttonClicked()">Se andre utfall</button>
+    <h1>{{ componentTitle }}</h1>
+    <VideoComponent :src="{ videoSrc }" />
+    <ButtonsComponent
+      :buttonName="'Se andre utfall'"
+      @clicked="buttonClicked"
+    />
   </div>
 </template>
 
 <script>
 import VideoComponent from "../VideoComponent.vue";
+import ButtonsComponent from "../ButtonsComponent.vue";
 
 export default {
   components: {
     VideoComponent,
+    ButtonsComponent,
   },
-  data() {
-    return {
-      title: String,
-      text: String,
-      videoSrc: String,
-    };
+  props: {
+    componentTitle: String,
+    videoSrc: String,
   },
   methods: {
     buttonClicked() {

@@ -3,21 +3,26 @@
     <h1>Barnet klatrer opp i et høyt tre</h1>
     <VideoComponent src="../assets/videos/testvideo.mp4" />
     <p>Hva ville du ha gjort?</p>
-    <button v-on:click="buttonClicked('child climbs down')">
-      Be barnet klatre ned
-    </button>
-    <button v-on:click="buttonClicked('child climbs up')">
-      La barnet klatre videre
-    </button>
+    <ButtonsComponent
+      :buttonName="'Be barnet klatre ned'"
+      @clicked="buttonClicked('child climbs down')"
+    />
+    <ButtonsComponent
+      :buttonName="'La barnet klatre videre'"
+      @clicked="buttonClicked('child climbs up')"
+    />
   </div>
 </template>
 
 <script>
 import VideoComponent from "../VideoComponent.vue";
+import ButtonsComponent from "../ButtonsComponent.vue";
+import { Pages } from "@/store/enums.js";
 
 export default {
   components: {
     VideoComponent,
+    ButtonsComponent,
   },
   data() {
     return {
@@ -28,8 +33,17 @@ export default {
   },
   methods: {
     buttonClicked(upOrDown) {
-      this.$store.dispatch("setFirstClimbing", upOrDown);
-      this.$emit("changeComponent", upOrDown);
+      //this.$store.dispatch("setFirstClimbing", upOrDown); tror ikke vi trenger denne
+      if (upOrDown === "child climbs up") {
+        console.log("setting climbed up");
+        this.$store.dispatch("setCurrentPage", Pages.ChapterTwo.ClimbedUpTree);
+      } else {
+        console.log("settign climbed down");
+        this.$store.dispatch(
+          "setCurrentPage",
+          Pages.ChapterTwo.ClimbedDownTree
+        );
+      }
     },
   },
 };
