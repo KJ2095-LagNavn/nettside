@@ -1,7 +1,7 @@
 <template>
   <div id="videobox">
     <h1>{{ componentTitle }}</h1>
-    <VideoComponent :src="{ videoSrc }" />
+    <VideoComponent :src="videoSrc" />
     <ButtonsComponent
       :buttonName="'Se andre utfall'"
       @clicked="buttonClicked"
@@ -42,8 +42,24 @@ export default {
           "setCurrentPage",
           Pages.ChapterTwo.ClimbedUpTreeNext
         );
+      } else if (currentPage == this.Pages.ChapterTwo.ParentMadeTreeHut) {
+        this.$store.dispatch(
+          "setCurrentPage",
+          Pages.ChapterTwo.ChildMadeTreeHutNext
+        );
+      } else if (currentPage == this.Pages.ChapterTwo.ChildMadeTreeHut) {
+        this.$store.dispatch(
+          "setCurrentPage",
+          Pages.ChapterTwo.ParentMadeTreeHutNext
+        );
+      } else if (currentPage == this.Pages.ChapterTwo.Sleepover) {
+        this.$store.dispatch(
+          "setCurrentPage",
+          Pages.ChapterTwo.NoSleepoverNext
+        );
+      } else if (currentPage == this.Pages.ChapterTwo.NoSleepover) {
+        this.$store.dispatch("setCurrentPage", Pages.ChapterTwo.SleepoverNext);
       }
-      console.log("functiom");
     },
   },
 };

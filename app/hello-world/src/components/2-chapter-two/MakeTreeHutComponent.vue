@@ -3,10 +3,10 @@
     <h1>Barnet vil bygge trehytte med farlig verktøy</h1>
     <VideoComponent src="../assets/videos/testvideo.mp4" />
     <p>Hva ville du ha gjort?</p>
-    <button v-on:click="buttonClicked('child climbs down')">
+    <button v-on:click="buttonClicked('vis barnet')">
       Vis barnet hvordan verktøyene brukes og la barnet gjøre jobben selv
     </button>
-    <button v-on:click="buttonClicked('child climbs up')">
+    <button v-on:click="buttonClicked('gjør selv')">
       Vis barnet hvordan verktøyene brukes og gjør jobben selv
     </button>
   </div>
@@ -14,14 +14,30 @@
 
 <script>
 import VideoComponent from "../VideoComponent.vue";
+import { Pages } from "@/store/enums.js";
 
 export default {
   components: {
     VideoComponent,
   },
+  data() {
+    return {
+      Pages,
+    };
+  },
   methods: {
     buttonClicked(text) {
-      console.log(text);
+      if (text === "vis barnet") {
+        this.$store.dispatch(
+          "setCurrentPage",
+          Pages.ChapterTwo.ChildMadeTreeHut
+        );
+      } else {
+        this.$store.dispatch(
+          "setCurrentPage",
+          Pages.ChapterTwo.ParentMadeTreeHut
+        );
+      }
     },
   },
 };

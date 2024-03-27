@@ -23,24 +23,24 @@
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbedUpTree }"
-    :videoSrc="'../assets/videos/pyppy.mp4'"
+    :videoSrc="'../../assets/videos/pyppy.mp4'"
     :componentTitle="'Barnet klatrer opp'"
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbedDownTree }"
-    :videoSrc="'../assets/videos/testvideo.mp4'"
+    :videoSrc="'../../assets/videos/testvideo.mp4'"
     :componentTitle="'Barnet klatrer ned'"
   />
   <SeeNextOutcome
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbedUpTreeNext }"
-    :videoSrc="'../assets/videos/testvideo.mp4'"
+    :videoSrc="'../../assets/videos/testvideo.mp4'"
     :componentTitle="'Barnet klatrer opp'"
   />
   <SeeNextOutcome
     :class="{
       hidden: activePage !== this.Pages.ChapterTwo.ClimbedDownTreeNext,
     }"
-    :videoSrc="'../assets/videos/pyppy.mp4'"
+    :videoSrc="'../../assets/videos/pyppy.mp4'"
     :componentTitle="'Barnet klatrer ned'"
   />
   <MakeTreeHutComponent
@@ -48,26 +48,54 @@
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.ChildMadeTreeHut }"
-    :videoSrc="'../assets/videos/puppy.mp4'"
+    :videoSrc="'../../assets/videos/puppy.mp4'"
     :componentTitle="'Barnet gjør jobben selv'"
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.ParentMadeTreeHut }"
-    :videoSrc="'../assets/videos/testvideo.mp4'"
+    :videoSrc="'../../assets/videos/testvideo.mp4'"
     :componentTitle="'Du gjør jobben selv'"
+  />
+  <SeeNextOutcome
+    :class="{
+      hidden: activePage !== this.Pages.ChapterTwo.ParentMadeTreeHutNext,
+    }"
+    :videoSrc="'../../assets/videos/testvideo.mp4'"
+    :componentTitle="'Du gjør jobben selv'"
+  />
+  <SeeNextOutcome
+    :class="{
+      hidden: activePage !== this.Pages.ChapterTwo.ChildMadeTreeHutNext,
+    }"
+    :videoSrc="'../../assets/videos/pyppy.mp4'"
+    :componentTitle="'Barnet gjør jobben selv'"
   />
   <ChapterTwoTent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.TentSleepover }"
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.Sleepover }"
-    :videoSrc="'../assets/videos/testvideo.mp4'"
+    :videoSrc="'../../assets/videos/testvideo.mp4'"
     :componentTitle="'Du sier ja'"
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.NoSleepover }"
-    :videoSrc="'../assets/videos/puppy.mp4'"
+    :videoSrc="'../../assets/videos/puppy.mp4'"
     :componentTitle="'Du sier nei'"
+  />
+  <SeeNextOutcome
+    :class="{
+      hidden: activePage !== this.Pages.ChapterTwo.NoSleepoverNext,
+    }"
+    :videoSrc="'../../assets/videos/testvideo.mp4'"
+    :componentTitle="'Du sier nei'"
+  />
+  <SeeNextOutcome
+    :class="{
+      hidden: activePage !== this.Pages.ChapterTwo.SleepoverNext,
+    }"
+    :videoSrc="'../../assets/videos/pyppy.mp4'"
+    :componentTitle="'Du sier ja'"
   />
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div id="videobox">
     <h1>Barnet klatrer opp i et høyt tre</h1>
-    <VideoComponent src="../assets/videos/testvideo.mp4" />
+    <VideoComponent src="../../store/videos/puppy.mp4" />
     <p>Hva ville du ha gjort?</p>
     <ButtonsComponent
       :buttonName="'Be barnet klatre ned'"
@@ -27,8 +27,6 @@ export default {
   data() {
     return {
       title: String,
-      text: String,
-      videoSrc: String,
     };
   },
   methods: {

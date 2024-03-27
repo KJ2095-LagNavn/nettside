@@ -16,6 +16,11 @@ export default {
     VideoComponent,
     ButtonsComponent,
   },
+  data() {
+    return {
+      Pages,
+    };
+  },
   props: {
     componentTitle: String,
     videoSrc: String,
@@ -24,13 +29,16 @@ export default {
   methods: {
     buttonClicked() {
       var currentPage = this.$store.getters.getCurrentPage;
-      console.log(currentPage);
       if (
         currentPage == this.Pages.ChapterTwo.ClimbedUpTreeNext ||
         currentPage == this.Pages.ChapterTwo.ClimbedDownTreeNext
       ) {
-        console.log("setting make tree hut");
         this.$store.dispatch("setCurrentPage", Pages.ChapterTwo.MakeTreeHut);
+      } else if (
+        currentPage == this.Pages.ChapterTwo.ChildMadeTreeHutNext ||
+        currentPage == this.Pages.ChapterTwo.ParentMadeTreeHutNext
+      ) {
+        this.$store.dispatch("setCurrentPage", Pages.ChapterTwo.TentSleepover);
       }
     },
   },
