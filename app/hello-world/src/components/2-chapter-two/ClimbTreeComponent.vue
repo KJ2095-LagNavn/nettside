@@ -33,12 +33,9 @@ export default {
   },
   methods: {
     buttonClicked(upOrDown) {
-      //this.$store.dispatch("setFirstClimbing", upOrDown); tror ikke vi trenger denne
       if (upOrDown === "child climbs up") {
-        console.log("setting climbed up");
         this.$store.dispatch("setCurrentPage", Pages.ChapterTwo.ClimbedUpTree);
       } else {
-        console.log("settign climbed down");
         this.$store.dispatch(
           "setCurrentPage",
           Pages.ChapterTwo.ClimbedDownTree

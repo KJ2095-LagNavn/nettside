@@ -20,7 +20,6 @@ export default createStore({
       return state.currentState;
     },
     getChildsInfo(state) {
-      console.log("getting name: " + state.name);
       return state.childsName;
     },
     getCurrentChapterAndPage(state) {

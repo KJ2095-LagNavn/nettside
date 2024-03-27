@@ -23,12 +23,24 @@
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbedUpTree }"
-    :videoSrc="'../assets/videos/testvideo.mp4'"
+    :videoSrc="'../assets/videos/pyppy.mp4'"
     :componentTitle="'Barnet klatrer opp'"
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbedDownTree }"
     :videoSrc="'../assets/videos/testvideo.mp4'"
+    :componentTitle="'Barnet klatrer ned'"
+  />
+  <SeeNextOutcome
+    :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbedUpTreeNext }"
+    :videoSrc="'../assets/videos/testvideo.mp4'"
+    :componentTitle="'Barnet klatrer opp'"
+  />
+  <SeeNextOutcome
+    :class="{
+      hidden: activePage !== this.Pages.ChapterTwo.ClimbedDownTreeNext,
+    }"
+    :videoSrc="'../assets/videos/pyppy.mp4'"
     :componentTitle="'Barnet klatrer ned'"
   />
   <MakeTreeHutComponent
@@ -70,6 +82,7 @@ import ChapterOneSelectWhatYouAllowed from "@/components/1-chapter-one/4-SelectW
 import ChapterTwoTent from "@/components/2-chapter-two/ChapterTwoTent.vue";
 import ChoiceMadeComponent from "@/components/2-chapter-two/ChoiceMadeComponent.vue";
 import { Pages } from "@/store/enums.js";
+import SeeNextOutcome from "@/components/2-chapter-two/SeeNextOutcome.vue";
 
 export default {
   name: "ChaptersView",
@@ -82,7 +95,12 @@ export default {
     ChapterOneSelectWhatChildAllowed,
     ChapterOneSelectWhatYouAllowed,
     ChapterTwoTent,
+    SeeNextOutcome,
     ChoiceMadeComponent,
+  },
+  props: {
+    climbTree1: String,
+    climbTree2: String,
   },
   methods: {},
   data() {
@@ -97,10 +115,7 @@ export default {
     this.unwatch = this.$store.watch(
       (state, getters) => getters.getCurrentPage,
       (newValue) => {
-        console.log("recieved: " + newValue);
         this.activePage = newValue;
-        console.log(this.activePage);
-        console.log(this.Pages.ChapterTwo.ClimbedDownTree);
       }
     );
   },
