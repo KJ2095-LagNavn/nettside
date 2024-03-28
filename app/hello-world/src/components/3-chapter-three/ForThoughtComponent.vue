@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     startChapter() {
-      this.$store.dispatch("setCurrentPage", Pages.ChapterThree.Actions);
+      this.$store.dispatch("setCurrentPage", Pages.ChapterThree.Goals);
     },
   },
 };

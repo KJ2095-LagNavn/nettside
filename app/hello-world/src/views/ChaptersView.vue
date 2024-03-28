@@ -112,6 +112,11 @@
       hidden: activePage !== this.Pages.ChapterThree.ForThought,
     }"
   />
+  <GoalsComponent
+    :class="{
+      hidden: activePage !== this.Pages.ChapterThree.Goals,
+    }"
+  />
 </template>
 
 <script>
@@ -129,6 +134,7 @@ import SeeNextOutcome from "@/components/2-chapter-two/SeeNextOutcome.vue";
 import ChapterThreeIntroComponent from "@/components/3-chapter-three/ChapterThreeIntroComponent.vue";
 import ConcernsComponent from "@/components/3-chapter-three/ConcernsComponent.vue";
 import ForThoughtComponent from "@/components/3-chapter-three/ForThoughtComponent.vue";
+import GoalsComponent from "@/components/3-chapter-three/GoalsComponent.vue";
 
 export default {
   name: "ChaptersView",
@@ -146,6 +152,7 @@ export default {
     ChoiceMadeComponent,
     ConcernsComponent,
     ForThoughtComponent,
+    GoalsComponent,
   },
   props: {
     climbTree1: String,
