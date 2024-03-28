@@ -28,6 +28,13 @@ const Pages = {
     SleepoverNext: "ChapterTwo-Sleepsover-Next",
     NoSleepoverNext: "ChapterTwo-NoSleepover-Next",
   },
+  ChapterThree: {
+    Intro: "ChapterThree-Intro",
+    Concerns: "ChapterThree-Concerns",
+    ForThought: "ChapterThree-ForThought",
+    Goals: "ChapterThree-Goals",
+    Actions: "ChapterThree-Actions",
+  },
 };
 // Export the objects
 module.exports = { Pages };

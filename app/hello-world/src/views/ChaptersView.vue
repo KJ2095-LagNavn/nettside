@@ -23,7 +23,7 @@
   />
   <ChoiceMadeComponent
     :class="{ hidden: activePage !== this.Pages.ChapterTwo.ClimbedUpTree }"
-    :videoSrc="'../../assets/videos/pyppy.mp4'"
+    :videoSrc="'../../assets/videos/puppy.mp4'"
     :componentTitle="'Barnet klatrer opp'"
   />
   <ChoiceMadeComponent
@@ -40,7 +40,7 @@
     :class="{
       hidden: activePage !== this.Pages.ChapterTwo.ClimbedDownTreeNext,
     }"
-    :videoSrc="'../../assets/videos/pyppy.mp4'"
+    :videoSrc="'../../assets/videos/puppy.mp4'"
     :componentTitle="'Barnet klatrer ned'"
   />
   <MakeTreeHutComponent
@@ -67,7 +67,7 @@
     :class="{
       hidden: activePage !== this.Pages.ChapterTwo.ChildMadeTreeHutNext,
     }"
-    :videoSrc="'../../assets/videos/pyppy.mp4'"
+    :videoSrc="'../../assets/videos/puppy.mp4'"
     :componentTitle="'Barnet gjør jobben selv'"
   />
   <ChapterTwoTent
@@ -94,8 +94,23 @@
     :class="{
       hidden: activePage !== this.Pages.ChapterTwo.SleepoverNext,
     }"
-    :videoSrc="'../../assets/videos/pyppy.mp4'"
+    :videoSrc="'../../assets/videos/puppy.mp4'"
     :componentTitle="'Du sier ja'"
+  />
+  <ChapterThreeIntroComponent
+    :class="{
+      hidden: activePage !== this.Pages.ChapterThree.Intro,
+    }"
+  />
+  <ConcernsComponent
+    :class="{
+      hidden: activePage !== this.Pages.ChapterThree.Concerns,
+    }"
+  />
+  <ForThoughtComponent
+    :class="{
+      hidden: activePage !== this.Pages.ChapterThree.ForThought,
+    }"
   />
 </template>
 
@@ -111,6 +126,9 @@ import ChapterTwoTent from "@/components/2-chapter-two/ChapterTwoTent.vue";
 import ChoiceMadeComponent from "@/components/2-chapter-two/ChoiceMadeComponent.vue";
 import { Pages } from "@/store/enums.js";
 import SeeNextOutcome from "@/components/2-chapter-two/SeeNextOutcome.vue";
+import ChapterThreeIntroComponent from "@/components/3-chapter-three/ChapterThreeIntroComponent.vue";
+import ConcernsComponent from "@/components/3-chapter-three/ConcernsComponent.vue";
+import ForThoughtComponent from "@/components/3-chapter-three/ForThoughtComponent.vue";
 
 export default {
   name: "ChaptersView",
@@ -124,7 +142,10 @@ export default {
     ChapterOneSelectWhatYouAllowed,
     ChapterTwoTent,
     SeeNextOutcome,
+    ChapterThreeIntroComponent,
     ChoiceMadeComponent,
+    ConcernsComponent,
+    ForThoughtComponent,
   },
   props: {
     climbTree1: String,

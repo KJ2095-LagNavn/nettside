@@ -39,6 +39,11 @@ export default {
         currentPage == this.Pages.ChapterTwo.ParentMadeTreeHutNext
       ) {
         this.$store.dispatch("setCurrentPage", Pages.ChapterTwo.TentSleepover);
+      } else if (
+        currentPage == this.Pages.ChapterTwo.NoSleepoverNext ||
+        currentPage == this.Pages.ChapterTwo.SleepoverNext
+      ) {
+        this.$store.dispatch("setCurrentPage", Pages.ChapterThree.Intro);
       }
     },
   },

@@ -10,10 +10,17 @@
 </template>
 
 <script>
+import { Pages } from "@/store/enums.js";
+
 export default {
+  data() {
+    return {
+      Pages,
+    };
+  },
   methods: {
     startChapter() {
-      console.log("Start chap");
+      this.$store.dispatch("setCurrentPage", Pages.ChapterThree.Concerns);
     },
   },
 };
